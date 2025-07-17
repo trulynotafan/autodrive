@@ -1,12 +1,12 @@
-import Autobase from 'autobase'
-import b4a from 'b4a'
-import Hyperdrive from 'hyperdrive'
-import Hyperbee from 'hyperbee'
-import Hyperblobs from 'hyperblobs'
-import MirrorDrive from 'mirror-drive'
-import { WriteStream } from './lib/streams.mjs'
+const Autobase = require('autobase')
+const b4a = require('b4a')
+const Hyperdrive = require('hyperdrive')
+const Hyperbee = require('hyperbee')
+const Hyperblobs = require('hyperblobs')
+const MirrorDrive = require('mirror-drive')
+const { WriteStream } = require('./lib/streams.js')
 
-export default class Autodrive extends Autobase {
+class Autodrive extends Autobase {
   constructor (store, bootstrap, handlers = {}) {
     if (bootstrap && typeof bootstrap !== 'string' && !b4a.isBuffer(bootstrap)) {
       handlers = bootstrap
@@ -136,3 +136,5 @@ export default class Autodrive extends Autobase {
     return this.view.createReadStream(path, opts)
   }
 }
+
+module.exports = Autodrive
