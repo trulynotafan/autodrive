@@ -81,3 +81,4 @@ The `.view` property is an instance of `Hyperdrive` by default.
 - [ ] `.downloadDiff(version, folder, [options])`
 - [ ] `.downloadRange(dbRanges, blobRanges)`
 - [ ] `.findingPeers()`
+
